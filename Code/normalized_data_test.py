@@ -17,14 +17,14 @@ def norm_data_plot(data_path, analysis_path, trial):
 
     # Plotting the raw data
     quasi_df.plot(kind='bar',legend=False)
-    plt.savefig(f"{analysis_path}/{trial}-raw.pdf")
+    plt.savefig(f"{analysis_path}/{trial}-raw.png")
     print(f"Trial {trial} raw graph complete")
 
     # Plotting the Normalized data
     norm_df = quasi_df.copy()
     norm_df = norm_df.abs() / (norm_df.abs()).sum()
     norm_df.plot(kind='bar',legend=False)
-    plt.savefig(f"{analysis_path}/{trial}-norm.pdf")
+    plt.savefig(f"{analysis_path}/{trial}-norm.png")
     print(f"Trial {trial} norm graph complete")
 
 def get_direct_path(code_path, target_dir):
