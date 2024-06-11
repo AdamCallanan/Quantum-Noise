@@ -1,9 +1,9 @@
 import os
 
-def clean_file_names(root_directory):
-    for subdir, _, files in os.walk(root_directory):
+def clean_file_names(data_path):
+    for subdir, _, files in os.walk(data_path):
 
-        # Sort the files to ensure consistent numbering
+        # Sorting the files to ensure consistent numbering
         files.sort()
 
         # Loop through the files and rename them
@@ -11,7 +11,7 @@ def clean_file_names(root_directory):
         n = 1
         for filename in files:
 
-            # Split the filename at the first hyphen
+            # Split the filenames at the hyphen
             parts = filename.split('-', 1)
 
             # Remove non .json files
@@ -47,6 +47,11 @@ def clean_file_names(root_directory):
                 os.rename(old_file_path, new_file_path)
                 n += 1
 
-# Example usage
-root_directory = 'IBM-Q'
-clean_file_names(root_directory)
+# Getting direct path to data directory
+data_dir = 'IBM-Q'
+code_path = os.path.dirname(os.path.realpath(__file__))
+data_path = os.path.join(code_path,'..',data_dir)
+data_path = os.path.normpath(data_path)
+
+# The good stuff
+clean_file_names(data_path)
