@@ -50,6 +50,7 @@ def get_trial_rmse(df, comp_avgs):
     # Guessing each trial came from the computer producing the lowest rmse
     trial_rmse["guess"] = trial_rmse[computers].idxmin(axis=1)
 
+    trial_rmse.index.names = ["Trial"]
     return trial_rmse
 
 # Loading data as "df"
@@ -61,6 +62,6 @@ df = pd.read_csv(data_path)
 # The good stuff
 comp_avgs = get_comp_avgs(df)
 trial_rmse = get_trial_rmse(df, comp_avgs)
+
 print(comp_avgs)
 print(trial_rmse)
-
