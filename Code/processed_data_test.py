@@ -3,7 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Loading dataframe
-df = pd.read_csv("data.csv")
+code_dir = os.path.dirname(os.path.realpath(__file__))
+data_path = os.path.join(code_dir,"data.csv")
+df = pd.read_csv(data_path)
 
 # Selecting the ibm_kyoto trials
 kyoto_df = df[df["computer"]=="ibm_kyoto"]
