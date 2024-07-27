@@ -22,7 +22,7 @@ print(qc.draw())
 print("="*100)
 
 # Connecting to IBM quantum computer service
-service = QiskitRuntimeService(channel="ibm_quantum", token="aa63f4d4d90c27e4156b7ebf5894e886e7dd0e63e765b53936f426bdfa6cb980673845816c81282ed9d219b3110593d12389cfbbd88eca97c14f78bc2a1551da")
+service = QiskitRuntimeService(channel="ibm_quantum", token="")
 
 # Selecting computer
 real_backend = service.backend(name="ibm_sherbrooke")
