@@ -63,5 +63,7 @@ df = pd.read_csv(data_path)
 comp_avgs = get_comp_avgs(df)
 trial_rmse = get_trial_rmse(df, comp_avgs)
 
+print("Computer Averages")
 print(comp_avgs)
+print("Trial RMSE")
 print(trial_rmse)
